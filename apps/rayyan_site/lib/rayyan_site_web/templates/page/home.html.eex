@@ -1,0 +1,21 @@
+<h1>Welcome to Rayyan's website</h1>
+<br>
+<h2><em>Recent posts</em></h2>
+<ul>
+  <%= for post <- recent_posts() do %>
+    <li class="py-1">
+      <div>
+        <a href="<%= "/writings/" <> post.id %>">
+          <h3 class="margin-none"><%= post.title %></h3>
+        </a>
+        <time><%= post.date %></time>
+        <p><%= post.byline %></p>
+        <div class="flex flex-row w-100">
+          <%= for tag <- post.tags do %>
+            <small class="pr-1"><em>#<%= tag %></em></small>
+          <% end %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

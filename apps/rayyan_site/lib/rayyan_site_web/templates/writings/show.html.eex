@@ -1,0 +1,16 @@
+<div class="pb-1">
+  <h1 id="top"><%= @post.title %></h1>
+  <h4 class="my-1"><%= @post.byline %></h4>
+  <strong><%= @post.date %></strong>
+  <div class="flex flex-row w-100 my-1">
+    <%= for tag <- @post.tags do %>
+      <small class="pr-1"><em>#<%= tag %></em></small>
+    <% end %>
+  </div>
+</div>
+<article>
+  <%= raw(@content) %>
+</article>
+<div>
+  Other articles/Tags TODO
+</div>

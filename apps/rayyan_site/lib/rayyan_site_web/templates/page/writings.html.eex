@@ -1,0 +1,16 @@
+<h1>Writings</h1>
+<br>
+<%= for post <- all_posts() do %>
+  <div class="card py-1">
+    <a href="<%= "/writings/" <> post.id %>">
+      <h2 class="margin-none"><%= post.title %></h2>
+    </a>
+    <time><%= post.date %></time>
+    <p><%= post.byline %></p>
+    <div class="flex flex-row w-100">
+      <%= for tag <- post.tags do %>
+        <small class="pr-1"><em>#<%= tag %></em></small>
+      <% end %>
+    </div>
+  </div>
+<% end %>
